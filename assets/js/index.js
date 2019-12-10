@@ -55,7 +55,7 @@ window.onload = function() {
             document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes;
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
             document.querySelectorAll('img.a-img')[i+1].setAttribute('src', tableau[i].img);
-            i += 1;
+            i += 1; 
         }
     }
 loadObject();
