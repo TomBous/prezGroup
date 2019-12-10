@@ -43,24 +43,18 @@ var tableau = [
     }
 ];
 window.onload = function() {
-    class Objet {
-        constructor(title, author, publishedDate, img, content, resumes) {
-            this.title = title;
-            this.author = author;
-            this.publishedDate = publishedDate;
-            this.img = img;
-            this.content = content;
-            this.resumes = resumes;
-        }
-    }
+    
     function loadObject() {
         var i = 0;
         while (i < tableau.length) {
-            var newObjet = document.querySelector('section.objet').cloneNode(true);
-            document.body.appendChild(newObjet);
-            var titles = document.querySelectorAll('section.h2');
-            titles[i].textContent += i;
-            console.log(titles);
+            var newArticle = document.querySelector('section.article').cloneNode(true);
+            document.body.appendChild(newArticle);
+            newArticle.classList.remove('hidden');
+            document.querySelectorAll('h2.title')[i+1].textContent = tableau[i].title;
+            document.querySelectorAll('p.content')[i+1].textContent = tableau[i].content;
+            document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes;
+            document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
+            document.querySelectorAll('img.a-img')[i+1].setAttribute('src', tableau[i].img);
             i += 1;
         }
     }
