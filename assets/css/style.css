@@ -42,3 +42,28 @@ section {
   width: 90%;
   border-radius: 300px;
 }
+.profil1{
+  display: flex;
+  position: fixed;
+  top: -60vh;
+  left: calc(50% - 200px);
+  z-index: 3;
+  width: 400px;
+}
+#message1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBEBEB;
+  border-radius: 20px;
+}
+#ok{
+  background-color: cornflowerblue;
+  border-radius: 20px;
+  width: 100px;
+  padding: 20px 60px;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
