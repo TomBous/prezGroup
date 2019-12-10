@@ -42,3 +42,25 @@ var tableau = [
         "img": "https://static.education.francetv.fr/media/img/hd/img.gif",
     }
 ];
+window.onload = function() {
+    class Objet {
+        constructor(title, author, publishedDate, img, content, resumes) {
+            this.title = title;
+            this.author = author;
+            this.publishedDate = publishedDate;
+            this.img = img;
+            this.content = content;
+            this.resumes = resumes;
+        }
+    }
+    function loadObject() {
+        var i = 0;
+        while (i < tableau.length) {
+            var newObjet = document.querySelector('section.objet').cloneNode(true);
+            document.body.appendChild(newObjet);
+            document.querySelectorAll('section.objet.h2')[i].textContent = tableau[i].title;
+            i += 1;
+        }
+    }
+loadObject();
+}
