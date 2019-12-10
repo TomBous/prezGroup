@@ -47,10 +47,11 @@ window.onload = function() {
     function loadObject() {
         var i = 0;
         while (i < tableau.length) {
-            var newArticle = document.querySelector('section.article').cloneNode(true);
-            document.body.appendChild(newArticle);
+            var newArticle = document.querySelector('card.article').cloneNode(true);
+            var section = document.getElementsByTagName('section')[0];
+            section.appendChild(newArticle);
             newArticle.classList.remove('hidden');
-            document.querySelectorAll('h2.title')[i+1].textContent = tableau[i].title;
+            document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title;
             document.querySelectorAll('p.content')[i+1].textContent = tableau[i].content;
             document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes;
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
