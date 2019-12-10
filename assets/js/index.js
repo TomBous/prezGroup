@@ -46,20 +46,20 @@ window.onload = function() {
     
     function loadObject() {
         var i = 0;
-        while (i < tableau.length) {
-            var newArticle = document.querySelector('card.article').cloneNode(true);
-            var section = document.getElementsByTagName('section')[0];
-            section.appendChild(newArticle);
-            newArticle.classList.remove('hidden');
-            document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title;
-            document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes;
+        while (i < tableau.length) { // Tant que i est inférieur à l'index maximum du tableau (.length)
+            var newArticle = document.querySelector('card.article').cloneNode(true); // On clone l'article hidden de notre html
+            var section = document.getElementsByTagName('section')[0]; // On selectionne la section sur laquelle on veut injecter notre article
+            section.appendChild(newArticle); // On injecte le nouvel article
+            newArticle.classList.remove('hidden'); // On lui retire sa classe hidden
+            document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title; // On lui injecte les différentes informations du tableau 
+            document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes; // .title .resumes ect....
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
             document.querySelectorAll('img.a-img')[i+1].setAttribute('src', tableau[i].img);
-            document.querySelectorAll('button.but')[i+1].setAttribute('id', i);
-            i += 1;
+            document.querySelectorAll('button.but')[i+1].setAttribute('id', i); / On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
+            i += 1; // On increment i pour passer à la prochaine boucle
         }
     }
-    function moveDown(elem) {
+    function moveDown(elem) { // Animation de descente de la popup
         var top=-60;
         function frame() {
             top++;
@@ -70,7 +70,7 @@ window.onload = function() {
         }
             var id = setInterval(frame, 10); 
     }
-    function moveUp(elem) {
+    function moveUp(elem) { // Animation de montée de la popup
         var down=10;
         function frame() {
             down--;
@@ -81,8 +81,8 @@ window.onload = function() {
         }
             var id = setInterval(frame, 10); 
     }
-document.getElementById('ok').onclick = function() {
-    moveUp(document.querySelector('section.popup'));
+document.getElementById('ok').onclick = function() { // On selectionne le bouton ok, puis lors du clic (.onclick) on lui dit de lancer une fonction
+    moveUp(document.querySelector('section.popup')); // Cette fonction appelle la fonction d'animation de fermeture de la popup par le haut
 }
 loadObject();
 
