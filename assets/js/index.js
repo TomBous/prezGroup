@@ -58,7 +58,9 @@ window.onload = function() {
         while (i < tableau.length) {
             var newObjet = document.querySelector('section.objet').cloneNode(true);
             document.body.appendChild(newObjet);
-            document.querySelectorAll('section.objet.h2')[i].textContent = tableau[i].title;
+            var titles = document.querySelectorAll('section.h2');
+            titles[i].textContent += i;
+            console.log(titles);
             i += 1;
         }
     }
