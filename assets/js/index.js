@@ -48,7 +48,8 @@ window.onload = function() {
         var i = 0;
         while (i < tableau.length) {
             var newArticle = document.querySelector('card.article').cloneNode(true);
-            document.body.appendChild(newArticle);
+            var section = document.getElementsByTagName('section')[0];
+            section.appendChild(newArticle);
             newArticle.classList.remove('hidden');
             document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title;
             document.querySelectorAll('p.content')[i+1].textContent = tableau[i].content;

@@ -1,11 +1,17 @@
 body {
     margin: 0px;
     padding: 0px;
+    width: 100%;
+}
+section {
+  width: 100%;
+  background-color: #3B4252;
 }
 
 .flexrow {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
   }
   .flexrow article {
     width: 40%;
@@ -22,7 +28,14 @@ body {
 
 .article {
     width: 400px;
-    display: block;
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ECEFF4;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #333;
+
   }
 
 .article img {
