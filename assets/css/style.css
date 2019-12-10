@@ -2,3 +2,16 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
+.flexrow {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .flexrow article {
+    width: 40%;
+    margin: 20px;
+    cursor: pointer;
+  }
+  .flexrow img {
+    width: 300px;
+  }
