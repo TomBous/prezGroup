@@ -59,40 +59,42 @@ window.onload = function() {
             i += 1;
         }
     }
+    function moveDown(elem) {
+        var top=-60;
+        function frame() {
+            top++;
+            elem.style.top = top + 'vh';
+            if (top == 15){
+            clearInterval(id)
+            }
+        }
+            var id = setInterval(frame, 10); 
+    }
+    function moveUp(elem) {
+        var down=10;
+        function frame() {
+            down--;
+            elem.style.top = down + 'vh';
+            if (down == -60){
+            clearInterval(id)
+            }
+        }
+            var id = setInterval(frame, 10); 
+    }
 document.getElementById('ok').onclick = function() {
-    moveDown(document.querySelector('section.profil1'));
+    moveUp(document.querySelector('section.popup'));
 }
 loadObject();
 
-function moveUp(elem) {
-    var top=-60;
-    function frame() {
-        top++;
-        elem.style.top = top + 'vh';
-        if (top == 10){
-        clearInterval(id)
-        }
-    }
-        var id = setInterval(frame, 10); 
-}
-function moveDown(elem) {
-    var down=10;
-    function frame() {
-        down--;
-        elem.style.top = down + 'vh';
-        if (down == -60){
-        clearInterval(id)
-        }
-    }
-        var id = setInterval(frame, 10); 
-}
-var info = document.querySelectorAll('button.but')
-    for (var n=0; n < info.length; n++) {
-    var inf = info[n];
-    inf.addEventListener("click", function() {
-        moveUp(document.querySelector('section.profil1'));
-    var click = this.id;
-    document.querySelector('section.profil1 div p').textContent = tableau[click].content;
+
+    var info = document.querySelectorAll('button.but') // On récupère les boutons plus d'info
+    for (var n=0; n < info.length; n++) {   // On a récupérer un tableau avec chanque bouton, pour chaque bouton (longueur du tableau)
+    var inf = info[n];  // Pour chaque itération de la boucle, on enregistre le bouton en cours de traitement
+    inf.addEventListener("click", function() {  // Sur ce bouton on lui ajoute un mouchard (eventListener) qui detecte le click. Lors du click on lui demande d'exécuter une fonction.
+        var id = this.id; // On enregistre l'id du bouton en cours de traitement (this)
+        document.querySelector('.popup div h1').textContent = tableau[id].title; // On sélectionne le <p> de la popup et on remplace son contenu en fonction de l'id du bouton cliqué qui nous sert d'index dans le tableau de contenu.
+        document.querySelector('.popup div p').textContent = tableau[id].content;
+        moveDown(document.querySelector('.popup')); // On fait descendre la popup
         });
     };
     

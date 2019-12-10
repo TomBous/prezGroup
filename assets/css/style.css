@@ -42,7 +42,7 @@ section {
   width: 90%;
   border-radius: 300px;
 }
-.profil1{
+.popup{
   display: flex;
   position: fixed;
   top: -60vh;
@@ -50,7 +50,7 @@ section {
   z-index: 3;
   width: 400px;
 }
-#message1{
+#message{
   display: flex;
   flex-direction: column;
   justify-content: center;
