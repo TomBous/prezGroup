@@ -15,3 +15,16 @@ body {
   .flexrow img {
     width: 300px;
   }
+
+  .hidden {
+    display: none!important;
+  }
+
+.article {
+    width: 400px;
+    display: block;
+  }
+
+.article img {
+  width: 90%;
+}
