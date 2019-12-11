@@ -55,7 +55,7 @@ window.onload = function() {
             document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes; // .title .resumes ect....
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
             document.querySelectorAll('img.a-img')[i+1].setAttribute('src', tableau[i].img);
-            document.querySelectorAll('button.but')[i+1].setAttribute('id', i); / On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
+            document.querySelectorAll('button.but')[i+1].setAttribute('id', i); // On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
             i += 1; // On increment i pour passer à la prochaine boucle
         }
     }
