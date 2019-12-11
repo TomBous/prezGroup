@@ -51,11 +51,11 @@ window.onload = function() {
             var section = document.getElementsByTagName('section')[0]; // On selectionne la section sur laquelle on veut injecter notre article
             section.appendChild(newArticle); // On injecte le nouvel article
             newArticle.classList.remove('hidden'); // On lui retire sa classe hidden
-            document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title; // On lui injecte les différentes informations du tableau 
+            document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title; // On lui injecte les différentes informations du tableau ([i+1] pour eviter d'affecter l'article hidden) 
             document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes; // .title .resumes ect....
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
             document.querySelectorAll('img.a-img')[i+1].setAttribute('src', tableau[i].img);
-            document.querySelectorAll('button.but')[i+1].setAttribute('id', i); / On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
+            document.querySelectorAll('button.but')[i+1].setAttribute('id', i); // On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
             i += 1; // On increment i pour passer à la prochaine boucle
         }
     }
