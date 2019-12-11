@@ -45,12 +45,12 @@ var tableau = [
 window.onload = function() {
     
     function loadObject() {
-        var i = 0;
+        var i = 0; 7
         while (i < tableau.length) { // Tant que i est inférieur à l'index maximum du tableau (.length)
             var newArticle = document.querySelector('card.article').cloneNode(true); // On clone l'article hidden de notre html
             var section = document.getElementsByTagName('section')[0]; // On selectionne la section sur laquelle on veut injecter notre article
             section.appendChild(newArticle); // On injecte le nouvel article
-            newArticle.classList.remove('hidden'); // On lui retire sa classe hidden
+            newArticle.classList.remove('hidden'); // On lui retire sa classe hidden a l element clone
             document.querySelectorAll('h2.titre')[i+1].textContent = tableau[i].title; // On lui injecte les différentes informations du tableau ([i+1] pour eviter d'affecter l'article hidden) 
             document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes; // .title .resumes ect....
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
@@ -61,17 +61,17 @@ window.onload = function() {
     }
     function moveDown(elem) { // Animation de descente de la popup
         var top=-60;
-        function frame() {
+        function frame() {  
             top++;
-            elem.style.top = top + 'vh';
-            if (top == 15){
+            elem.style.top = top + 'vh';  // .top renvoie a la propriete top{...}m, top est une variable correspondant a -60
+            if (top == 20){
             clearInterval(id)
             }
         }
-            var id = setInterval(frame, 10); 
+            var id = setInterval(frame, 10); //////// what is frame?? a function???
     }
     function moveUp(elem) { // Animation de montée de la popup
-        var down=10;
+        var down=20;
         function frame() {
             down--;
             elem.style.top = down + 'vh';
@@ -99,3 +99,5 @@ loadObject();
     };
     
 }
+
+frame;
