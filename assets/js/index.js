@@ -55,7 +55,7 @@ window.onload = function() {
             document.querySelectorAll('p.resumes')[i+1].textContent = tableau[i].resumes; // .title .resumes ect....
             document.querySelectorAll('p.author')[i+1].textContent = tableau[i].author;
             document.querySelectorAll('img.a-img')[i+1].setAttribute('src', tableau[i].img);
-            document.querySelectorAll('button.but')[i+1].setAttribute('id', i); // On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
+            document.querySelectorAll('div.but')[i+1].setAttribute('id', i); // On lui donne un id dans la boucle, pour que chaque article crée est un identifiant unique
             i += 1; // On increment i pour passer à la prochaine boucle
         }
     }
@@ -87,7 +87,7 @@ document.getElementById('ok').onclick = function() { // On selectionne le bouton
 loadObject();
 
 
-    var info = document.querySelectorAll('button.but') // On récupère les boutons plus d'info
+    var info = document.querySelectorAll('div.but') // On récupère les boutons plus d'info
     for (var n=0; n < info.length; n++) {   // On a récupérer un tableau avec chanque bouton, pour chaque bouton (longueur du tableau)
     var inf = info[n];  // Pour chaque itération de la boucle, on enregistre le bouton en cours de traitement
     inf.addEventListener("click", function() {  // Sur ce bouton on lui ajoute un mouchard (eventListener) qui detecte le click. Lors du click on lui demande d'exécuter une fonction.
