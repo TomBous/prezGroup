@@ -99,5 +99,3 @@ loadObject();
     };
     
 }
-
-frame;

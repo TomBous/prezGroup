@@ -46,7 +46,7 @@ section.flexrow {
   display: flex;
   position: fixed;
   top: -60vh;
-  left: calc(50% - 200px);
+  left: calc(50% - 250px);
   z-index: 3;
   width: 500px;
 }
